@@ -8,7 +8,7 @@ from proj1 import matrix_multiply
 import numpy as np
 
 logging.basicConfig(stream=sys.stdout,level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-cProfile.run('re.compile("foo|bar")')
+
 
 def setup_function(function):
     tracemalloc.start()
@@ -24,6 +24,13 @@ def teardown_function(function):
     
     tracemalloc.stop()
 
+def test_regex_compilation_performance():
+    
+    profiler = cProfile.Profile()
+    profiler.enable()
+    re.compile("foo|bar")
+    profiler.disable()
+    profiler.print_stats(sort='time')
 
 def test_large_matrices():
     try:
