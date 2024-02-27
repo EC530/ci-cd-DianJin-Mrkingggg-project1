@@ -1,4 +1,5 @@
-import pytest, tracemalloc, cProfile, re
+import pytest, tracemalloc, cProfile
+import re
 from io import StringIO
 import pstats
 import logging,sys
