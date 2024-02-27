@@ -1,6 +1,6 @@
 ## Project 1 components:
 
-1. Add matrice multiplication function and its test cases in proj1.py
+1. Add matrice multiplication function and in proj1.py
    
 2. Add unit tests for matrice multiplication in test_proj1.py
 
