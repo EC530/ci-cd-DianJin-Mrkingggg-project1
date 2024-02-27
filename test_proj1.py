@@ -66,4 +66,5 @@ def test_scalar():
     A = [[3]]
     B = [[4]]
     assert matrix_multiply(A, B) == [[12]]
+   
 
