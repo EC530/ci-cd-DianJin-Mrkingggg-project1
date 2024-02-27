@@ -1,4 +1,3 @@
-
 def matrix_multiply(A, B):
     if len(A)==0 or len(B)==0:
         raise ValueError("matrice not exist")
