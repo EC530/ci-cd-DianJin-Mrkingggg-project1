@@ -1,4 +1,7 @@
+
 def matrix_multiply(A, B):
+    if len(A)==0 or len(B)==0:
+        raise ValueError("matrice not exist")
     if len(A[0]) != len(B):
         raise ValueError("A's cols number not equal to B's rows number")
 
@@ -8,5 +11,4 @@ def matrix_multiply(A, B):
         for j in range(len(B[0])):
             for k in range(len(B)):
                 C[i][j] += A[i][k] * B[k][j]
-
     return C
