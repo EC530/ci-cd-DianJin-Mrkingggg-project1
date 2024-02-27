@@ -1,9 +1,10 @@
-import pytest, tracemalloc
+import pytest, tracemalloc, cProfile, re
 
 from proj1 import matrix_multiply
 
 import numpy as np
-# when tracing memory, using command: pytest -s test_proj1.py to show memory usage details
+cProfile.run('re.compile("foo|bar")')
+
 def setup_function(function):
    
     tracemalloc.start()
@@ -18,7 +19,7 @@ def teardown_function(function):
         print(stat)
     
     tracemalloc.stop()
-    
+
 def test_large_matrices():
 
     A = np.random.rand(100, 100)
@@ -65,3 +66,4 @@ def test_scalar():
     A = [[3]]
     B = [[4]]
     assert matrix_multiply(A, B) == [[12]]
+
