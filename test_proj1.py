@@ -1,11 +1,26 @@
-import pytest
+import pytest, tracemalloc
 
 from proj1 import matrix_multiply
 
 import numpy as np
+# when tracing memory, using command: pytest -s test_proj1.py to show memory usage details
+def setup_function(function):
+   
+    tracemalloc.start()
 
+def teardown_function(function):
+    
+    snapshot = tracemalloc.take_snapshot()
+    top_stats = snapshot.statistics('lineno')
 
+    print(f"[ Top 10 memory allocations for {function.__name__} ]")
+    for stat in top_stats[:10]:
+        print(stat)
+    
+    tracemalloc.stop()
+    
 def test_large_matrices():
+
     A = np.random.rand(100, 100)
     B = np.random.rand(100, 100)
     expected_result = np.dot(A, B)
