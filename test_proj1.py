@@ -52,7 +52,7 @@ def test_non_square_matrices():
         assert np.allclose(matrix_multiply(A.tolist(), B.tolist()), expected_result)
     except Exception as e:
         logging.exception("Exception occurred in test_non_square_matrices")
-       # raise
+        raise
 
 def test_floating_point_numbers():
     try:
@@ -93,7 +93,8 @@ def test_empty():
     try:
         A = []
         B = [[1, 2], [3, 4]]
-        matrix_multiply(A, B)
+        with pytest.raises(ValueError):
+            matrix_multiply(A, B)
     except Exception as e:
         logging.exception("Exception occurred in test_empty")
         raise
@@ -112,8 +113,8 @@ def test_format_pos():
     try:
           A = [['a',1,3],[2,5,6]]
           B = [[4,2,5],[10,9,8]]
-        #   with pytest.raises(ValueError): 
-          matrix_multiply(A,B)
+          with pytest.raises(ValueError): 
+            matrix_multiply(A,B)
     except Exception as e:
         logging.exception("Exception occurred for not a number from matrice(s)")
-       # raise
+        raise
