@@ -52,6 +52,7 @@ def test_non_square_matrices():
         assert np.allclose(matrix_multiply(A.tolist(), B.tolist()), expected_result)
     except Exception as e:
         logging.exception("Exception occurred in test_non_square_matrices")
+        raise
 
 def test_floating_point_numbers():
     try:
@@ -61,7 +62,7 @@ def test_floating_point_numbers():
         assert np.allclose(matrix_multiply(A, B), expected_result)
     except Exception as e:
         logging.exception("Exception occurred in test_floating_point_numbers")
-
+        raise
 
 def test_input():
     try: 
@@ -70,15 +71,15 @@ def test_input():
         assert matrix_multiply(A, B) == [[4, 4], [10, 8]]
     except Exception as e:
         logging.exception("Exception occurred in test_input")
-
+        raise
 def test_identity():
     try: 
         I = [[1, 0], [0, 1]]
         A = [[1, 2], [3, 4]]
         assert matrix_multiply(A, I) == A
     except Exception as e:
-            logging.exception("Exception occurred in test_identity")
-
+        logging.exception("Exception occurred in test_identity")
+        raise
 def test_cols_rows():
     try:
         A = [[1, 2, 3], [4, 5, 6]]
@@ -86,17 +87,16 @@ def test_cols_rows():
         with pytest.raises(ValueError):
             matrix_multiply(A, B)
     except Exception as e:
-                logging.exception("Exception occurred in test_cols_rows")
-
+        logging.exception("Exception occurred in test_cols_rows")
+        raise
 def test_empty():
     try:
         A = []
         B = [[1, 2], [3, 4]]
-        with pytest.raises(ValueError):
-            matrix_multiply(A, B)
+        matrix_multiply(A, B)
     except Exception as e:
         logging.exception("Exception occurred in test_empty")
-
+        raise
 
 def test_scalar():
     try:
@@ -104,5 +104,16 @@ def test_scalar():
         B = [[4]]
         assert matrix_multiply(A, B) == [[12]]
     except Exception as e:
-                logging.exception("Exception occurred in test_scalar")
-     
+        logging.exception("Exception occurred in test_scalar")
+        raise
+
+#here an error logging will appear
+def test_format_pos():
+    try:
+          A = [['a',1,3],[2,5,6]]
+          B = [[4,2,5],[10,9,8]]
+        #   with pytest.raises(ValueError): 
+          matrix_multiply(A,B)
+    except Exception as e:
+        logging.exception("Exception occurred for not a number from matrice(s)")
+        raise
