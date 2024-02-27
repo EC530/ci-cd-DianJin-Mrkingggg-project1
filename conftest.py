@@ -9,3 +9,4 @@ def pytest_runtest_call(item):
     ps = pstats.Stats(profiler).sort_stats('cumulative')
     print(f"Profile for {item.name}")
     ps.print_stats()
+
