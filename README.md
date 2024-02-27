@@ -11,5 +11,7 @@
 
 5. Add CPU time test in conftest.py so that cpu run time: ncalls  tottime  percall  cumtime  percall could be observed.
 
+6. Include coverage and flake configurations in py-ci.yml of .github/workflow
+
 ### Using pytest -s test_proj1.py to show complete information.
 
