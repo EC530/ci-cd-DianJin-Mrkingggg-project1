@@ -1,4 +1,4 @@
-## Project 1 components instruction:
+## Project 1 components:
 
 1. Add matrice multiplication function and its test cases in proj1.py
    
