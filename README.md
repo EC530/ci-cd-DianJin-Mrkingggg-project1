@@ -1,3 +1,5 @@
+## Project 1 components instruction:
+
 1. Add matrice multiplication function and its test cases in proj1.py
    
 2. Add unit tests for matrice multiplication in test_proj1.py
@@ -6,5 +8,5 @@
 
 4. Add CPU time test in conftest.py so that cpu run time: ncalls  tottime  percall  cumtime  percall could be observed.
 
-##Using pytest -s test_proj1.py to show complete information.
+## Using pytest -s test_proj1.py to show complete information.
 
