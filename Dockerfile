@@ -22,4 +22,4 @@ COPY . /app
 EXPOSE 8080
 
 # 容器启动时执行的命令
-CMD ["python", "your_app.py"]
+CMD ["python", "proj1.py"]
