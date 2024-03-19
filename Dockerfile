@@ -1,5 +1,5 @@
 # official
-FROM python:3.8-slim
+FROM python:3.8
 
 # workdir
 WORKDIR /app
