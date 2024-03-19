@@ -6,8 +6,7 @@ WORKDIR /app
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 安装系统依赖（以Debian/Ubuntu为例）
-RUN apt-get update 
-RUN apt-get install -y 
+RUN apt-get update && apt-get install -y 
 RUN build-essential 
 RUN libpq-dev 
 RUN libmysqlclient-dev
