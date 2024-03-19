@@ -1,15 +1,16 @@
 # 使用更全面的基础镜像
-FROM python:3.8
+FROM python:3.8-slim-bullseye
 
 # 设置工作目录
 WORKDIR /app
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 安装系统依赖（以Debian/Ubuntu为例）
-RUN apt-get update && apt-get install -y 
-RUN build-essential 
-RUN libpq-dev 
-RUN libmysqlclient-dev
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    libmysqlclient-dev
+
 # 复制requirements.txt到容器中
 COPY requirements.txt /app/
 
