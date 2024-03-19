@@ -7,14 +7,12 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 安装系统依赖（以Debian/Ubuntu为例）
 RUN apt-get update 
-RUN apt-get install -y \
-    build-essential \
-    libpq-dev \
-    libmysqlclient-dev \
-    # 根据需要添加其他依赖
-
-    # 复制requirements.txt到容器中
-    COPY requirements.txt /app/
+RUN apt-get install -y 
+RUN build-essential 
+RUN libpq-dev 
+RUN libmysqlclient-dev
+# 复制requirements.txt到容器中
+COPY requirements.txt /app/
 
 # 安装Python依赖
 RUN pip install --no-cache-dir -r requirements.txt
