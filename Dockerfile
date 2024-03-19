@@ -15,7 +15,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # 安装Python依赖
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制其余的项目文件到容器中（确保.dockerignore文件配置得当，以避免复制不必要的文件）
 COPY . /app
