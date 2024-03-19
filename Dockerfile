@@ -3,7 +3,6 @@ FROM python:3.8
 
 # 设置工作目录
 WORKDIR /app
-RUN sed -i 's@archive.ubuntu.com@mirror_site@g' /etc/apt/sources.list
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 安装系统依赖（以Debian/Ubuntu为例）
