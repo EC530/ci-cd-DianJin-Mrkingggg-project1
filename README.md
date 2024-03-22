@@ -44,6 +44,9 @@ To build the Docker image from this Dockerfile, run the following command in you
 ```bash
 docker build -t my-python-app .
 ```
+Build result in terminal:
+<img width="1073" alt="image" src="https://github.com/EC530/ci-cd-DianJin-Mrkingggg-project1/assets/105716817/7c403d3a-0ca6-4864-953f-fb17c9fe34fa">
+
 
 ### Running the Container
 ```bash
