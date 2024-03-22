@@ -16,7 +16,11 @@
 ### Using pytest -s test_proj1.py to show complete information.
 
 
-### Add Dockerfile for Container. To start the container, use 1. docker build -t project1:latest .  2. docker run -d --name cProj1 -p 8080:8080 project1:latest in terminal and then start the docker.
+### Add Dockerfile for Container. To start the container, use 
+```bash
+docker build -t project1:latest .
+docker run -d --name cProj1 -p 8080:8080 project1:latest in terminal and then start the docker.
+```
 
 ## Documentation for Dockerfile:
 
