@@ -21,7 +21,6 @@
 ## Documentation for Dockerfile:
 
 #### Base Image:
-
 The Dockerfile is based on the `python:3.9` image. This is an official Python Docker image that comes pre-installed with Python version 3.9. It's suitable for running applications developed with Python 3.9.
 
 #### Working Directory:
