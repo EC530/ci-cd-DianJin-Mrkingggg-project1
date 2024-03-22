@@ -24,30 +24,32 @@
 
 The Dockerfile is based on the `python:3.9` image. This is an official Python Docker image that comes pre-installed with Python version 3.9. It's suitable for running applications developed with Python 3.9.
 
-## Working Directory
-
+Working Directory:
 The Dockerfile sets the working directory inside the container to `/app`. This means that all commands will be run in this directory, and it's where your application files will reside.
 
-## Python Dependencies
-
+Python Dependencies：
 To manage Python dependencies, the Dockerfile first copies a `requirements.txt` file into the `/app` directory of the container. Then, it installs these dependencies using `pip install`. This ensures that all the necessary Python libraries for your application are installed within the container.
 
-## Project Files
-
+Project Files：
 The Dockerfile copies the contents of your project's current directory into the container's `/app` directory. This action includes your application code, resources, and any other files needed to run your application, except those specified in `.dockerignore`. It's important to maintain a properly configured `.dockerignore` file to prevent copying unnecessary or sensitive information into the container.
 
-## Exposing Ports
-
+Exposing Ports：
 The Dockerfile includes the `EXPOSE 8080` instruction, which tells Docker to expose port 8080 inside the container. This is crucial for allowing your application to communicate with the outside world.
 
-## Startup Command
+### Startup Command
+When the container starts, it executes the command `CMD ["python", "proj1.py"]`. This command tells Docker to run the application using the Python interpreter, with `proj1.py` being the entry point of your application.
 
-When the container starts, it executes the command `CMD ["python", "proj1.py"]`. This command tells Docker to run your application using the Python interpreter, with `proj1.py` being the entry point of your application.
-
-## Building the Docker Image
-
+### Building the Docker Image
 To build the Docker image from this Dockerfile, run the following command in your terminal:
 
 ```bash
 docker build -t my-python-app .
+```
+
+### Running the Container
+```bash
+docker run -d -p 8080:8080 my-python-app
+```
+requirements.txt includes all the necessary libraries
+
 
