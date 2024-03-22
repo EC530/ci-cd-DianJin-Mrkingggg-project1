@@ -59,5 +59,11 @@ requirements.txt includes all the necessary libraries
 
 <img width="1270" alt="image" src="https://github.com/EC530/ci-cd-DianJin-Mrkingggg-project1/assets/105716817/ff0d4ecc-eb3a-47a2-8bd7-fea68ecdc0c2">
 
+#### Docker Container Status:
+
+At this point, the Docker container is stopped because the process exited (with status 0, indicating that mkdir completed with no error).
+
+<img width="1270" alt="image" src="https://github.com/EC530/ci-cd-DianJin-Mrkingggg-project1/assets/105716817/e7b3794b-949e-4f3b-aa5e-ca8dd441404f">
+
 
 
