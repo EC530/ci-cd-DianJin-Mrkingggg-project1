@@ -19,8 +19,9 @@
 ### Add Dockerfile for Container. To start the container, use 
 ```bash
 docker build -t project1:latest .
-docker run -d --name cProj1 -p 8080:8080 project1:latest in terminal and then start the docker.
+docker run -d --name cProj1 -p 8080:8080 project1:latest
 ```
+in terminal and then start the docker.
 
 ## Documentation for Dockerfile:
 
